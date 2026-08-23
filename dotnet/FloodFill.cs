@@ -1,3 +1,6 @@
+#!/usr/bin/env dotnet
+// https://leetcode.com/problems/flood-fill/description/
+
 var s = new Solution();
 Console.WriteLine(s.FloodFill([[1,1,1],[1,1,0],[1,0,1]], 1, 1, 2));
 

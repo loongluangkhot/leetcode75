@@ -1,4 +1,5 @@
-using System.Text;
+#!/usr/bin/env dotnet
+// https://leetcode.com/problems/merge-two-sorted-lists/description/
 
 var s = new Solution();
 

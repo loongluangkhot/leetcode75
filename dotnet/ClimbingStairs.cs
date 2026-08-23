@@ -1,13 +1,8 @@
+#!/usr/bin/env dotnet
+// https://leetcode.com/problems/climbing-stairs/description/
+
 var s = new Solution();
 Console.WriteLine(s.ClimbStairs(45));
-
-// 5 steps
-// 1,1, 1,1, 1
-// 2,   1,1, 1
-// 1,2,1,    1
-// 1,1, 2,   1
-// 1,1, 1, 2
-
 
 public class Solution {
     public Dictionary<int, int> _cache = new Dictionary<int, int>();

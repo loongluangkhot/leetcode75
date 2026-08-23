@@ -1,3 +1,6 @@
+#!/usr/bin/env dotnet
+// https://leetcode.com/problems/ransom-note/description/
+
 var s = new Solution();
 Console.WriteLine(s.CanConstruct("a", "b")); // false
 Console.WriteLine(s.CanConstruct("aa", "ab")); // false

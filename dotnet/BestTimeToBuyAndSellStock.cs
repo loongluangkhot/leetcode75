@@ -1,3 +1,6 @@
+#!/usr/bin/env dotnet
+// https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
+
 var s = new Solution();
 Console.WriteLine(s.MaxProfit([7,1,5,3,6,4]));
 Console.WriteLine(s.MaxProfit([7,6,4,3,1]));

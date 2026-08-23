@@ -1,4 +1,5 @@
-var s = new Solution();
+#!/usr/bin/env dotnet
+// https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/
 
 // Definition for a binary tree node.
 public class TreeNode {

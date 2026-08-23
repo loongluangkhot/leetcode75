@@ -1,3 +1,6 @@
+#!/usr/bin/env dotnet
+// https://leetcode.com/problems/valid-palindrome/description/
+
 var s = new Solution();
 Console.WriteLine(s.IsPalindrome("A man, a plan, a canal: Panama")); // true
 Console.WriteLine(s.IsPalindrome("race a car")); // false

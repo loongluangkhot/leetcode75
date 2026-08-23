@@ -1,4 +1,5 @@
- var s = new MyQueue();
+#!/usr/bin/env dotnet
+// https://leetcode.com/problems/implement-queue-using-stacks/description/
 
 public class MyQueue {
     private readonly Stack<int> _toAdd;

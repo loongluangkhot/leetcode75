@@ -1,3 +1,6 @@
+#!/usr/bin/env dotnet
+// https://leetcode.com/problems/valid-anagram/description/
+
 var s = new Solution();
 Console.WriteLine(s.IsAnagram("anagram", "nagaram")); // true
 Console.WriteLine(s.IsAnagram("rat", "car")); // false

@@ -1,3 +1,6 @@
+#!/usr/bin/env dotnet
+// https://leetcode.com/problems/first-bad-version/description/
+
 var s = new Solution(5, 4);
 Console.WriteLine(s.FirstBadVersion(5)); // 4
 

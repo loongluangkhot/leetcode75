@@ -1,3 +1,6 @@
+#!/usr/bin/env dotnet
+// https://leetcode.com/problems/valid-parentheses/description/
+
 var s = new Solution();
 Console.WriteLine(s.IsValid("()")); // true
 Console.WriteLine(s.IsValid("()[]{}")); // true

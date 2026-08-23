@@ -1,4 +1,5 @@
-var s = new Solution();
+#!/usr/bin/env dotnet
+// https://leetcode.com/problems/linked-list-cycle/description/
 
 // Definition for singly-linked list.
 public class ListNode {

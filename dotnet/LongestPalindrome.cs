@@ -1,3 +1,6 @@
+#!/usr/bin/env dotnet
+// https://leetcode.com/problems/longest-palindrome/description/
+
 var s = new Solution();
 
 Console.WriteLine((int)'A'); // 65

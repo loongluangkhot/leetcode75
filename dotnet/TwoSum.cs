@@ -1,3 +1,6 @@
+#!/usr/bin/env dotnet
+// https://leetcode.com/problems/two-sum/description/
+
 var s = new Solution();
 // Console.WriteLine(string.Join(",", s.TwoSum([2, 7, 11, 15], 9)));
 Console.WriteLine(string.Join(",", s.TwoSum([3,3], 6)));
