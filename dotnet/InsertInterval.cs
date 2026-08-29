@@ -7,18 +7,47 @@ var s = new Solution();
 //Example 1:
 // Input: intervals = [[1,3],[6,9]], newInterval = [2,5]
 // Output: [[1,5],[6,9]]
-s.Insert([[1,3],[6,9]], [2,5]).PrintJaggedArr();
+s.Insert(
+        [
+            [1, 3],
+            [6, 9],
+        ],
+        [2, 5]
+    )
+    .PrintJaggedArr();
 
 // Example 2:
 // Input: intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]
 // startInsertionIndex = 2, endInsertionIndex = 3
 // Output: [[1,2],[3,10],[12,16]]
 // Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].
-s.Insert([[1,2],[3,5],[6,7],[8,10],[12,16]], [4,8]).PrintJaggedArr();
+s.Insert(
+        [
+            [1, 2],
+            [3, 5],
+            [6, 7],
+            [8, 10],
+            [12, 16],
+        ],
+        [4, 8]
+    )
+    .PrintJaggedArr();
 
-s.Insert([[1,5]], [2,3]).PrintJaggedArr(); // [[1,5]]
+s.Insert(
+        [
+            [1, 5],
+        ],
+        [2, 3]
+    )
+    .PrintJaggedArr(); // [[1,5]]
 
-s.Insert([[1,5]], [0,3]).PrintJaggedArr(); // [[0,5]]
+s.Insert(
+        [
+            [1, 5],
+        ],
+        [0, 3]
+    )
+    .PrintJaggedArr(); // [[0,5]]
 
 // Binary search
 public class Solution
@@ -27,7 +56,7 @@ public class Solution
     {
         var result = new List<int[]>();
         var startInsertionIndex = BinarySearchInsertionIndex(intervals, newInterval[0]);
-        
+
         var i = 0;
         while (i < startInsertionIndex)
         {
@@ -39,7 +68,7 @@ public class Solution
         if (prevInterval != null && prevInterval[1] >= newInterval[0])
         {
             prevInterval[1] = Math.Max(prevInterval[1], newInterval[1]);
-        } 
+        }
         else
         {
             result.Add(newInterval);
@@ -74,8 +103,10 @@ public class Solution
         {
             var mid = i + (j - i) / 2;
             var midVal = intervals[mid][0];
-            if (midVal < searchTarget) i = mid + 1;
-            else j = mid;
+            if (midVal < searchTarget)
+                i = mid + 1;
+            else
+                j = mid;
         }
 
         return i;

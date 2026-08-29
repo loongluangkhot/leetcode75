@@ -2,11 +2,13 @@
 // https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
 
 var s = new Solution();
-Console.WriteLine(s.MaxProfit([7,1,5,3,6,4]));
-Console.WriteLine(s.MaxProfit([7,6,4,3,1]));
+Console.WriteLine(s.MaxProfit([7, 1, 5, 3, 6, 4]));
+Console.WriteLine(s.MaxProfit([7, 6, 4, 3, 1]));
 
-public class Solution {
-    public int MaxProfit(int[] prices) {
+public class Solution
+{
+    public int MaxProfit(int[] prices)
+    {
         var maxProfit = 0;
         var i = 0;
         var j = 1;

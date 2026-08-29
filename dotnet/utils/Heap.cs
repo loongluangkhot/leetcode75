@@ -11,7 +11,7 @@ public class Heap<T>(Comparer<T> comparer) : IHeap<T>
 {
     private readonly Comparer<T> _comparer = comparer;
     private readonly List<T> _content = new List<T>();
-    
+
     public T Dequeue()
     {
         var result = _content[0];
@@ -56,13 +56,14 @@ public class Heap<T>(Comparer<T> comparer) : IHeap<T>
             // Use rightChildIndex if "right child comes before left child" according to comparer
             if (rightChildIndex < _content.Count)
             {
-                var useRight = _comparer.Compare(_content[rightChildIndex], _content[leftChildIndex]) < 0;
+                var useRight =
+                    _comparer.Compare(_content[rightChildIndex], _content[leftChildIndex]) < 0;
                 if (useRight)
                 {
                     swapIndex = rightChildIndex;
                 }
             }
-            
+
             // Swap if "swap (child) comes before curr" according to comparer
             var toSwap = _comparer.Compare(_content[swapIndex], _content[i]) < 0;
             // Exit if no swap

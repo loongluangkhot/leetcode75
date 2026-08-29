@@ -2,11 +2,12 @@
 // https://leetcode.com/problems/two-sum/description/
 
 var s = new Solution();
+
 // Console.WriteLine(string.Join(",", s.TwoSum([2, 7, 11, 15], 9)));
-Console.WriteLine(string.Join(",", s.TwoSum([3,3], 6)));
+Console.WriteLine(string.Join(",", s.TwoSum([3, 3], 6)));
 
-public class Solution {
-
+public class Solution
+{
     // // Two pointers O(nlogn)
     // public int[] TwoSum(int[] nums, int target) {
 
@@ -40,7 +41,7 @@ public class Solution {
     //         if (valToIndexListMap.ContainsKey(val))
     //         {
     //             valToIndexListMap[val].Add(i);
-    //         } 
+    //         }
     //         else
     //         {
     //             valToIndexListMap[val] = new List<int> { i };
@@ -78,8 +79,8 @@ public class Solution {
             if (valToIndexMap.TryGetValue(complement, out int complementIndex))
             {
                 return [i, complementIndex];
-            } 
-            
+            }
+
             valToIndexMap[val] = i;
         }
 

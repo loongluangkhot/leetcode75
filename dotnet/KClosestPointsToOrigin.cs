@@ -3,8 +3,23 @@
 #:include utils/ConsoleUtil.cs
 
 var s = new Solution();
-s.KClosest([[1,3],[-2,2]], 1).PrintJaggedArr(); // [[-2,2]]
-s.KClosest([[3,3],[5,-1],[-2,4]], 2).PrintJaggedArr(); // [[3,3],[-2,4]]
+s.KClosest(
+        [
+            [1, 3],
+            [-2, 2],
+        ],
+        1
+    )
+    .PrintJaggedArr(); // [[-2,2]]
+s.KClosest(
+        [
+            [3, 3],
+            [5, -1],
+            [-2, 4],
+        ],
+        2
+    )
+    .PrintJaggedArr(); // [[3,3],[-2,4]]
 
 // // Min-heap approach: time complexity of O(nlogn) + O(klogn) = O(nlogn) since k<=n
 // public class Solution2 {
@@ -31,8 +46,9 @@ public class Solution
     public int[][] KClosest(int[][] points, int k)
     {
         var maxHeap = new PriorityQueue<int[], double>(
-            Comparer<double>.Create((a, b) => b.CompareTo(a)));
-        
+            Comparer<double>.Create((a, b) => b.CompareTo(a))
+        );
+
         for (var i = 0; i < points.Length; i++)
         {
             var p = points[i];

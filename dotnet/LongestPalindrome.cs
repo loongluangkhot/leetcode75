@@ -6,8 +6,10 @@ var s = new Solution();
 Console.WriteLine((int)'A'); // 65
 Console.WriteLine((int)'a'); // 97
 
-public class Solution {
-    public int LongestPalindrome(string s) {
+public class Solution
+{
+    public int LongestPalindrome(string s)
+    {
         var charCountMap = new int[('Z' - 'A' + 1) * 2];
         foreach (var c in s)
         {

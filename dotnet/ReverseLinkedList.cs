@@ -2,18 +2,24 @@
 // https://leetcode.com/problems/reverse-linked-list/description/
 
 // Definition for singly-linked list.
-public class ListNode {
+public class ListNode
+{
     public int val;
     public ListNode? next;
-    public ListNode(int val=0, ListNode? next=null) {
+
+    public ListNode(int val = 0, ListNode? next = null)
+    {
         this.val = val;
         this.next = next;
     }
 }
 
-public class Solution {
-    public ListNode? ReverseList(ListNode? head) {
-        if (head == null) return head;
+public class Solution
+{
+    public ListNode? ReverseList(ListNode? head)
+    {
+        if (head == null)
+            return head;
         var stack = new Stack<ListNode>();
         var curr = head;
         while (curr != null)
@@ -21,7 +27,7 @@ public class Solution {
             stack.Push(curr);
             curr = curr.next;
         }
-        
+
         var result = stack.Pop();
         curr = result;
         while (stack.Count() > 0)

@@ -7,7 +7,8 @@ Console.WriteLine(s.IsValid("()[]{}")); // true
 Console.WriteLine(s.IsValid("([])")); // true
 Console.WriteLine(s.IsValid("([)]")); // false
 
-public class Solution {
+public class Solution
+{
     private static readonly Dictionary<char, char> _bracketPairMapByClosing = new()
     {
         { ')', '(' },
@@ -15,7 +16,8 @@ public class Solution {
         { '}', '{' },
     };
 
-    public bool IsValid(string s) {
+    public bool IsValid(string s)
+    {
         var stack = new Stack<char>();
         foreach (var c in s)
         {
@@ -27,12 +29,13 @@ public class Solution {
                     {
                         return false;
                     }
-                } 
+                }
                 else
                 {
                     return false;
                 }
-            } else
+            }
+            else
             {
                 stack.Push(c);
             }

@@ -2,10 +2,23 @@
 // https://leetcode.com/problems/flood-fill/description/
 
 var s = new Solution();
-Console.WriteLine(s.FloodFill([[1,1,1],[1,1,0],[1,0,1]], 1, 1, 2));
+Console.WriteLine(
+    s.FloodFill(
+        [
+            [1, 1, 1],
+            [1, 1, 0],
+            [1, 0, 1],
+        ],
+        1,
+        1,
+        2
+    )
+);
 
-public class Solution {
-    public int[][] FloodFill(int[][] image, int sr, int sc, int color) {
+public class Solution
+{
+    public int[][] FloodFill(int[][] image, int sr, int sc, int color)
+    {
         var s = new Stack<(int, int)>();
 
         var imageHeight = image.Length;
@@ -18,7 +31,17 @@ public class Solution {
         return image;
     }
 
-    private void Process(int[][] image, int sr, int sc, int fillColor, Stack<(int, int)> s, bool[,] seen, int startingColor, int imageHeight, int imageWidth)
+    private void Process(
+        int[][] image,
+        int sr,
+        int sc,
+        int fillColor,
+        Stack<(int, int)> s,
+        bool[,] seen,
+        int startingColor,
+        int imageHeight,
+        int imageWidth
+    )
     {
         AddCell(image, sr, sc, s, seen, startingColor, imageHeight, imageWidth);
         while (s.Count > 0)
@@ -34,12 +57,25 @@ public class Solution {
         }
     }
 
-    private void AddCell(int[][] image, int row, int col, Stack<(int,int)> s, bool[,] seen, int startingColor, int imageHeight, int imageWidth)
+    private void AddCell(
+        int[][] image,
+        int row,
+        int col,
+        Stack<(int, int)> s,
+        bool[,] seen,
+        int startingColor,
+        int imageHeight,
+        int imageWidth
+    )
     {
-        if (row >= 0 && row < imageHeight
-            && col >= 0 && col < imageWidth
-            && image[row][col] == startingColor 
-            && !seen[row, col])
+        if (
+            row >= 0
+            && row < imageHeight
+            && col >= 0
+            && col < imageWidth
+            && image[row][col] == startingColor
+            && !seen[row, col]
+        )
         {
             s.Push((row, col));
             seen[row, col] = true;

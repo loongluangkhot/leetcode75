@@ -9,6 +9,7 @@ public class TreeNode
     public int val;
     public TreeNode? left;
     public TreeNode? right;
+
     public TreeNode(int val = 0, TreeNode? left = null, TreeNode? right = null)
     {
         this.val = val;
@@ -62,7 +63,8 @@ public class Solution
 {
     private (int height, bool balanced) Check(TreeNode? node)
     {
-        if (node == null) return (0, true);
+        if (node == null)
+            return (0, true);
 
         var (leftHeight, leftBalanced) = Check(node.left);
         var (rightHeight, rightBalanced) = Check(node.right);
@@ -88,8 +90,8 @@ public class Solution
 //         var right = Height(node.right);
 //         if (right == -1) return -1;
 
-//         return Math.Abs(left - right) > 1 
-//             ? -1 
+//         return Math.Abs(left - right) > 1
+//             ? -1
 //             : Math.Max(left, right) + 1;
 //     }
 // }

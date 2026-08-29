@@ -6,15 +6,18 @@ var s = new Solution();
 // Example 1
 // Input: list1 = [1,2,4], list2 = [1,3,4]
 // Output: [1,1,2,3,4,4]
-Console.WriteLine(s.MergeTwoLists(new ListNode([1,2,4]), new ListNode([1,3,4])));
+Console.WriteLine(s.MergeTwoLists(new ListNode([1, 2, 4]), new ListNode([1, 3, 4])));
 
 Console.WriteLine(s.MergeTwoLists(null, new ListNode([0])));
 
 // Definition for singly-linked list.
-public class ListNode {
+public class ListNode
+{
     public int val;
     public ListNode? next;
-    public ListNode(int val=0, ListNode? next=null) {
+
+    public ListNode(int val = 0, ListNode? next = null)
+    {
         this.val = val;
         this.next = next;
     }
@@ -28,7 +31,6 @@ public class ListNode {
             curr.next = new ListNode(arr[i]);
             curr = curr.next;
         }
-
     }
 
     public override string ToString()
@@ -42,8 +44,10 @@ public class ListNode {
     }
 }
 
-public class Solution {
-    public ListNode MergeTwoLists(ListNode list1, ListNode list2) {
+public class Solution
+{
+    public ListNode MergeTwoLists(ListNode list1, ListNode list2)
+    {
         ListNode p = new ListNode(int.MinValue);
         ListNode head = p;
         ListNode? l = list1;

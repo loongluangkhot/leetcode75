@@ -2,11 +2,13 @@
 // https://leetcode.com/problems/binary-search/description/
 
 var s = new Solution();
-Console.WriteLine(s.Search([-1,0,3,5,9,12], 9)); // 4
-Console.WriteLine(s.Search([-1,0,3,5,9,12], 2)); // -1
+Console.WriteLine(s.Search([-1, 0, 3, 5, 9, 12], 9)); // 4
+Console.WriteLine(s.Search([-1, 0, 3, 5, 9, 12], 2)); // -1
 
-public class Solution {
-    public int Search(int[] nums, int target) {
+public class Solution
+{
+    public int Search(int[] nums, int target)
+    {
         var length = nums.Length;
 
         var i = 0;
@@ -25,7 +27,7 @@ public class Solution {
                 j = mid;
             }
         }
-        
+
         return nums[i] == target ? i : -1;
     }
 }

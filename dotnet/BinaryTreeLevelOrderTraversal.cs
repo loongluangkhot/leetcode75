@@ -2,21 +2,27 @@
 // https://leetcode.com/problems/binary-tree-level-order-traversal/description/
 
 // Definition for a binary tree node.
-public class TreeNode {
+public class TreeNode
+{
     public int val;
     public TreeNode? left;
     public TreeNode? right;
-    public TreeNode(int val=0, TreeNode? left=null, TreeNode? right=null) {
+
+    public TreeNode(int val = 0, TreeNode? left = null, TreeNode? right = null)
+    {
         this.val = val;
         this.left = left;
         this.right = right;
     }
 }
 
-public class Solution {
-    public IList<IList<int>> LevelOrder(TreeNode? root) {
+public class Solution
+{
+    public IList<IList<int>> LevelOrder(TreeNode? root)
+    {
         var result = new List<IList<int>>();
-        if (root == null) return result;
+        if (root == null)
+            return result;
 
         var q = new Queue<TreeNode>();
         q.Enqueue(root);
@@ -28,8 +34,10 @@ public class Solution {
             {
                 var n = q.Dequeue();
                 level.Add(n.val);
-                if (n.left != null) q.Enqueue(n.left);
-                if (n.right != null) q.Enqueue(n.right);
+                if (n.left != null)
+                    q.Enqueue(n.left);
+                if (n.right != null)
+                    q.Enqueue(n.right);
             }
             result.Add(level);
         }

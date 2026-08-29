@@ -2,7 +2,7 @@
 // https://leetcode.com/problems/maximum-subarray/description/
 
 var s = new Solution();
-Console.WriteLine(s.MaxSubArray([-2,1,-3,4,-1,2,1,-5,4]));
+Console.WriteLine(s.MaxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
 
 // // Prefix sum approach
 // // prefix[i] = nums[0] + ... + nums[i]
@@ -10,7 +10,7 @@ Console.WriteLine(s.MaxSubArray([-2,1,-3,4,-1,2,1,-5,4]));
 // public class Solution {
 //     public int MaxSubArray(int[] nums)
 //     {
-        
+
 //         var max = int.MinValue;
 //         var currPrefix = 0;
 //         var minPrefix = 0;
@@ -27,7 +27,8 @@ Console.WriteLine(s.MaxSubArray([-2,1,-3,4,-1,2,1,-5,4]));
 // Kadane's algorithm
 // MaxSubArray ending at i = best[i] = Math.Max(best[i - 1] + n[i], n[i]) -- either EXTEND or RESTART
 
-public class Solution {
+public class Solution
+{
     public int MaxSubArray(int[] nums)
     {
         var max = int.MinValue;

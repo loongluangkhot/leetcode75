@@ -7,6 +7,7 @@ public class TreeNode
     public int val;
     public TreeNode? left;
     public TreeNode? right;
+
     public TreeNode(int val = 0, TreeNode? left = null, TreeNode? right = null)
     {
         this.val = val;
@@ -33,7 +34,7 @@ public class Solution
             maxDiameter = Math.Max(maxDiameter, l + r);
             return Math.Max(l, r) + 1;
         }
-        
+
         Dfs(root);
         return maxDiameter;
     }

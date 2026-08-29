@@ -4,7 +4,12 @@
 #:include utils/ConsoleUtil.cs
 
 var s = new Solution();
-s.UpdateMatrix([[0, 0, 0], [0, 1, 0], [1, 1, 1]]).PrintJaggedArr();
+s.UpdateMatrix([
+        [0, 0, 0],
+        [0, 1, 0],
+        [1, 1, 1],
+    ])
+    .PrintJaggedArr();
 
 // Multi-source BFS
 public class Solution
@@ -38,8 +43,16 @@ public class Solution
             var valid = (int r, int c) => r >= 0 && r < height && c >= 0 && c < width;
             var unseen = (int r, int c) => result[r][c] == -1;
             var nextCount = count + 1;
-            List<(int row, int col, int count)> candidates = [(row - 1, col, nextCount), (row + 1, col, nextCount), (row, col - 1, nextCount), (row, col + 1, nextCount)];
-            var validUnseenNeighbours = candidates.Where(i => valid(i.row, i.col) && unseen(i.row, i.col)).ToList();
+            List<(int row, int col, int count)> candidates =
+            [
+                (row - 1, col, nextCount),
+                (row + 1, col, nextCount),
+                (row, col - 1, nextCount),
+                (row, col + 1, nextCount),
+            ];
+            var validUnseenNeighbours = candidates
+                .Where(i => valid(i.row, i.col) && unseen(i.row, i.col))
+                .ToList();
             return validUnseenNeighbours;
         }
 

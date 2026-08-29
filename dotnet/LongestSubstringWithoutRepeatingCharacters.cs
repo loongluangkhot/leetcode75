@@ -24,20 +24,25 @@ Console.WriteLine(s.LengthOfLongestSubstring("pwwkew"));
 
 Console.WriteLine(s.LengthOfLongestSubstring("ccbbcc")); // 2
 
-public class Solution {
-    public int LengthOfLongestSubstring(string s) {
-        var charToLastSeenIndexMap = new Dictionary<char,int>();
+public class Solution
+{
+    public int LengthOfLongestSubstring(string s)
+    {
+        var charToLastSeenIndexMap = new Dictionary<char, int>();
         var maxLen = 0;
         var startIndex = 0;
         for (var i = 0; i < s.Length; i++)
         {
             var c = s[i];
 
-            if (charToLastSeenIndexMap.TryGetValue(c, out var lastSeenIndex) && lastSeenIndex >= startIndex)
+            if (
+                charToLastSeenIndexMap.TryGetValue(c, out var lastSeenIndex)
+                && lastSeenIndex >= startIndex
+            )
             {
                 startIndex = lastSeenIndex + 1;
             }
-            
+
             charToLastSeenIndexMap[c] = i;
             maxLen = Math.Max(maxLen, i - startIndex + 1);
         }

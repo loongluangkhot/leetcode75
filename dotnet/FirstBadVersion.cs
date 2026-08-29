@@ -7,7 +7,6 @@ Console.WriteLine(s.FirstBadVersion(5)); // 4
 var s2 = new Solution(1, 1);
 Console.WriteLine(s2.FirstBadVersion(1)); // 1
 
-
 /* The isBadVersion API is defined in the parent class VersionControl.
       bool IsBadVersion(int version); */
 public class VersionControl
@@ -30,14 +29,16 @@ public class VersionControl
     }
 }
 
-public class Solution : VersionControl {
-
-    public Solution(int n, int bad): base(n, bad)
+public class Solution : VersionControl
+{
+    public Solution(int n, int bad)
+        : base(n, bad)
     {
         // Do nothing
     }
 
-    public int FirstBadVersion(int n) {
+    public int FirstBadVersion(int n)
+    {
         var i = 0;
         var j = n;
 

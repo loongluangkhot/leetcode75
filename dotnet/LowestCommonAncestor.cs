@@ -2,15 +2,21 @@
 // https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/
 
 // Definition for a binary tree node.
-public class TreeNode {
+public class TreeNode
+{
     public int val;
     public TreeNode? left;
     public TreeNode? right;
-    public TreeNode(int x) { val = x; }
+
+    public TreeNode(int x)
+    {
+        val = x;
+    }
 }
 
-public class Solution {
-    public TreeNode LowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) 
+public class Solution
+{
+    public TreeNode LowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q)
     {
         var common = root;
         var pCurr = root;
@@ -42,7 +48,7 @@ public class Solution {
             if (pCurr == qCurr)
             {
                 common = pCurr;
-            } 
+            }
             else
             {
                 return common!;
